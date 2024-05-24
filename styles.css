@@ -143,9 +143,11 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
   border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 .right-content .add2cart-btn:hover {
-  background: var(--c-very-dark-blue);
+  background: var(--c-dark-cyan);
 }
 
 .icon-cart {
