@@ -1,36 +1,199 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 
 :root {
-  --c-dark-cyan: hsl(158, 36%, 37%);
+  --c-cyan: hsl(158, 36%, 37%);
+  --c-dark-cyan: hsl(156, 42%, 18%);
   --c-cream: hsl(30, 38%, 92%);
   --c-very-dark-blue: hsl(212, 21%, 14%);
   --c-dark-grayish-blue: hsl(228, 12%, 48%);
   --c-white: hsl(0, 0%, 100%);
 }
 
+.no-margin-bottom figure {
+  margin-bottom: 0 !important;
+}
+
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  background: hsl(48, 71%, 99%);
 }
 
 body {
-  
   font-size: 1rem;
   font-family: "Montserrat", serif;
   background: var(--c-cream);
+  height: 100vh;
 
+  font-weight: 500;
   display: grid;
-  grid-template-columns: repeat(1,1fr);
+  justify-content: center;
+  align-items: center;
 }
 
-/* card styles */
-.card{
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+p {
+  line-height: 1.8;
+  color: var(--c-dark-grayish-blue);
+  font-weight: 500;
+}
+
+.attribution {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 2rem;
+  font-size: 11px;
+  text-align: center;
+  color: var(--c-dark-grayish-blue);
+}
+
+.attribution a {
+  color: var(--c-cyan);
+}
+
+/* Card styles */
+.card {
   width: 600px;
   background: var(--c-white);
+  border-radius: 1.2rem;
+  overflow: hidden;
 }
 
-.card article{
-  display: flex;
+.card .article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-gap: 0;
+  gap: 0;
+}
+
+/* when using grid: gap after image removal hack */
+.left-img {
+  line-height: 0%;
+}
+/* ===================== */
+.right-content {
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+}
+
+.right-content .product-type {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--c-dark-grayish-blue);
+  margin-bottom: 1.2rem;
+}
+
+.right-content h1.title {
+  font-family: "Fraunces", serif;
+  font-size: 2.3rem;
+  line-height: 2.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--c-very-dark-blue);
+}
+.right-content .product-description {
+  margin-bottom: 1.4rem;
+}
+
+.right-content .price-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.right-content .price-block .new-price {
+  font-size: 2.3rem;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  margin-right: 1.4rem;
+  color: var(--c-cyan);
+}
+
+.right-content .price-block .actual-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 1rem;
+  color: var(--c-dark-grayish-blue);
+}
+
+.right-content .add2cart-btn {
+  min-width: 100%;
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 0;
+  outline: 0;
+  color: var(--c-white);
+  background: var(--c-cyan);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.8rem;
+}
+.right-content .add2cart-btn:hover {
+  background: var(--c-very-dark-blue);
+}
+
+.icon-cart {
+  width: 1.1rem;
+  margin-right: 1rem;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  body {
+    display: block;
+    width: 100%;
+  }
+
+  .card-container {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  .card {
+    width: 100%;
+  }
+  .card .article {
+    display: block;
+    width: 100%;
+  }
+  .right-content {
+    padding: 1rem 2rem 1.9rem 1.9rem;
+  }
+
+  .right-content .product-type {
+    margin-bottom: 0.7rem;
+  }
+
+  .right-content h1.title {
+    margin-bottom: 0.8rem;
+  }
+  .right-content .product-description {
+    margin-bottom: 1rem;
+  }
+
+  .right-content .price-block {
+    margin-bottom: 1rem;
+  }
+
+  .right-content .add2cart-btn {
+    border-radius: 0.5rem;
+  }
+
+  .attribution {
+    padding: 0.5rem;
+  }
 }
